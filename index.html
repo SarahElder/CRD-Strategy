@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calgary Roller Derby — Strategic Plan 2025–2028+</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0c0b09;
+    --white: #f2ede4;
+    --red: #c9202f;
+    --gold: #e6a418;
+    --blue: #2f6bbf;
+    --teal: #1a8a7a;
+    --purple: #7050b0;
+    --panel: #131210;
+    --panel2: #1a1815;
+    --border: #272320;
+    --muted: #7a7060;
+    --text: #c5bba8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(12,11,9,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex; align-items: center;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; padding: 16px 16px;
+    white-space: nowrap; border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover { color: var(--white); border-bottom-color: var(--red); }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; letter-spacing: 0.1em;
+    color: var(--white); margin-right: 20px;
+    padding: 12px 0; flex-shrink: 0;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 72px 48px 64px;
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute;
+    top: -80px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,32,47,0.13) 0%, transparent 68%);
+    pointer-events: none;
+  }
+  header::after {
+    content: '★'; position: absolute;
+    bottom: -50px; right: 32px;
+    font-size: 240px; color: rgba(255,255,255,0.02);
+    pointer-events: none; user-select: none; line-height: 1;
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.22em;
+    color: var(--red); text-transform: uppercase; margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 9vw, 108px);
+    line-height: 0.88; letter-spacing: 0.025em;
+    color: var(--white); max-width: 750px; margin-bottom: 28px;
+  }
+  h1 em { color: var(--gold); font-style: normal; }
+  .header-meta {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    letter-spacing: 0.12em; margin-bottom: 40px;
+  }
+  .north-star {
+    display: inline-block;
+    padding: 18px 24px;
+    border-left: 3px solid var(--gold);
+    background: rgba(230,164,24,0.07);
+    max-width: 680px; font-size: 14px;
+    font-style: italic; color: var(--white);
+  }
+  .north-star strong {
+    font-style: normal; font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); display: block; margin-bottom: 6px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ── MAIN ── */
+  main { max-width: 1140px; margin: 0 auto; padding: 0 48px 100px; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin: 72px 0 28px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tag {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px; letter-spacing: 0.22em;
+    padding: 5px 12px 4px; border-radius: 2px; flex-shrink: 0;
+  }
+  .tag-exec  { background: #1a1412; color: var(--gold); border: 1px solid var(--gold); }
+  .tag-y1    { background: var(--red); color: #fff; }
+  .tag-y2    { background: var(--gold); color: #000; }
+  .tag-y3    { background: var(--blue); color: #fff; }
+  .tag-long  { background: #1e1c18; color: var(--muted); border: 1px solid var(--border); }
+  .tag-gov   { background: var(--teal); color: #fff; }
+  .tag-kpi   { background: #2a1f40; color: #a080e0; border: 1px solid #3a2f60; }
+  .tag-risk  { background: #3a1a10; color: #e07050; border: 1px solid #5a2a18; }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; letter-spacing: 0.07em; color: var(--white);
+  }
+  .section-desc {
+    color: var(--text); font-size: 13.5px;
+    max-width: 740px; margin-bottom: 24px; line-height: 1.7;
+  }
+
+  /* ── CARDS ── */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 3px; padding: 22px 22px 26px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #3a3530; }
+  .card-accent-red    { border-top: 2px solid var(--red); }
+  .card-accent-gold   { border-top: 2px solid var(--gold); }
+  .card-accent-blue   { border-top: 2px solid var(--blue); }
+  .card-accent-teal   { border-top: 2px solid var(--teal); }
+  .card-accent-muted  { border-top: 2px solid #3a3530; }
+  .card-accent-purple { border-top: 2px solid var(--purple); }
+  .card-accent-risk   { border-top: 2px solid #c05030; border: 1px solid #3a1a10; background: #100c0a; }
+  .card-icon { font-size: 20px; margin-bottom: 10px; display: block; }
+  .card-area {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+  }
+  .card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px; letter-spacing: 0.05em;
+    color: var(--white); margin-bottom: 10px; line-height: 1.1;
+  }
+  .card p { font-size: 13px; color: var(--text); line-height: 1.65; margin-bottom: 10px; }
+  .card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .card ul li {
+    font-size: 12.5px; color: var(--text);
+    padding-left: 15px; position: relative; line-height: 1.55;
+  }
+  .card ul li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--red); font-size: 10px; top: 3px;
+  }
+  .card-note {
+    margin-top: 12px; padding: 10px 12px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid var(--gold);
+    font-size: 12px; color: var(--muted); font-style: italic;
+  }
+  .card-note.risk-note { border-left-color: #c05030; }
+
+  /* ── EXEC SUMMARY / PILLARS ── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px; margin-top: 4px;
+  }
+  .pillar-card {
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 3px; padding: 20px 20px 22px;
+    position: relative; overflow: hidden;
+  }
+  .pillar-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+  }
+  .pillar-card.p-red::before   { background: var(--red); }
+  .pillar-card.p-gold::before  { background: var(--gold); }
+  .pillar-card.p-blue::before  { background: var(--blue); }
+  .pillar-card.p-teal::before  { background: var(--teal); }
+  .pillar-card.p-purple::before { background: var(--purple); }
+  .pillar-card.p-muted::before { background: #4a4038; }
+  .pillar-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px; line-height: 1;
+    opacity: 0.08; position: absolute;
+    top: 8px; right: 14px; letter-spacing: -0.02em;
+  }
+  .pillar-icon-lg { font-size: 26px; margin-bottom: 10px; display: block; }
+  .pillar-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; letter-spacing: 0.06em;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .pillar-card p { font-size: 12.5px; color: var(--text); line-height: 1.6; }
+
+  /* ── HIGH-LEVEL TIMELINE (top) ── */
+  .hl-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 3px; margin-top: 4px;
+  }
+  .hl-phase {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 3px; padding: 16px 18px 18px;
+    position: relative;
+  }
+  .hl-phase::before {
+    content: ''; display: block; height: 3px;
+    margin-bottom: 12px; border-radius: 1px;
+  }
+  .hl-phase.ph-red::before   { background: var(--red); }
+  .hl-phase.ph-gold::before  { background: var(--gold); }
+  .hl-phase.ph-blue::before  { background: var(--blue); }
+  .hl-phase.ph-muted::before { background: #4a4038; }
+  .hl-phase-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .ph-red   .hl-phase-label { color: var(--red); }
+  .ph-gold  .hl-phase-label { color: var(--gold); }
+  .ph-blue  .hl-phase-label { color: var(--blue); }
+  .ph-muted .hl-phase-label { color: var(--muted); }
+  .hl-phase h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px; letter-spacing: 0.05em;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .hl-phase ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .hl-phase ul li { font-size: 11.5px; color: var(--text); padding-left: 12px; position: relative; line-height: 1.45; }
+  .hl-phase ul li::before {
+    content: '·'; position: absolute; left: 2px; color: var(--muted);
+  }
+
+  /* ── METRICS ── */
+  .metrics {
+    margin-top: 48px; padding: 24px 32px;
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 3px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 24px;
+  }
+  .metric-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px; line-height: 1; color: var(--gold);
+  }
+  .metric-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.14em;
+    color: var(--muted); text-transform: uppercase; margin-top: 4px;
+  }
+
+  /* ── RUBRIC / INTERACTIVE TOOL ── */
+  .rubric-tool {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 3px; overflow: hidden; margin-top: 14px;
+  }
+  .rubric-header {
+    padding: 16px 20px; background: var(--panel2);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 10px;
+  }
+  .rubric-header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px; letter-spacing: 0.06em; color: var(--white);
+  }
+  .rubric-note-small {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.12em; color: var(--muted);
+  }
+  .rubric-footer {
+    padding: 12px 20px; background: var(--panel2);
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em; color: var(--muted);
+  }
+  .rubric-scroll { overflow-x: auto; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 12.5px; min-width: 700px;
+  }
+  thead tr { background: #131210; }
+  thead th {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); padding: 11px 12px; text-align: left;
+    border-bottom: 1px solid var(--border); white-space: nowrap;
+  }
+  thead th.sortable {
+    cursor: pointer; user-select: none;
+    transition: color 0.15s;
+  }
+  thead th.sortable:hover { color: var(--white); }
+  thead th.sort-asc .sort-icon::after { content: ' ↑'; }
+  thead th.sort-desc .sort-icon::after { content: ' ↓'; }
+  .sort-icon { opacity: 0.4; font-size: 10px; }
+  thead th.sort-asc .sort-icon,
+  thead th.sort-desc .sort-icon { opacity: 1; color: var(--gold); }
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody tr.row-selected { background: rgba(230,164,24,0.08); border-color: rgba(230,164,24,0.2); }
+  tbody tr.row-selected td:first-child { color: var(--gold); }
+  tbody td { padding: 10px 12px; color: var(--text); vertical-align: middle; }
+  tbody td:first-child { color: var(--white); font-weight: 600; font-size: 13px; }
+  .label-cell { font-size: 12px; color: var(--text); }
+  .total-cell {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; letter-spacing: 0.05em; text-align: center;
+  }
+  .t-high  { color: #4cca80; }
+  .t-med   { color: var(--gold); }
+  .t-low   { color: var(--red); }
+
+  /* ── KPI GRID ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-top: 4px; }
+  .kpi-item {
+    background: var(--panel2); border: 1px solid var(--border);
+    border-radius: 3px; padding: 14px 16px;
+  }
+  .kpi-function {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .kpi-item ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .kpi-item ul li {
+    font-size: 12px; color: var(--text);
+    padding-left: 14px; position: relative; line-height: 1.5;
+  }
+  .kpi-item ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 10px; top: 2px; }
+
+  /* ── CADENCE CALENDAR ── */
+  .cadence {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px; margin-top: 4px;
+  }
+  .cadence-month {
+    background: var(--panel2); border: 1px solid var(--border);
+    border-radius: 3px; padding: 14px 16px;
+  }
+  .month-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px; letter-spacing: 0.1em;
+    color: var(--white); margin-bottom: 6px;
+  }
+  .cadence-month.highlight { border-color: rgba(230,164,24,0.3); background: rgba(230,164,24,0.04); }
+  .cadence-month.highlight .month-name { color: var(--gold); }
+  .cadence-month ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .cadence-month ul li { font-size: 11.5px; color: var(--text); padding-left: 13px; position: relative; line-height: 1.45; }
+  .cadence-month ul li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 9px; top: 3px; }
+
+  /* ── STAKEHOLDER MAP ── */
+  .stakeholder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 4px; }
+  .stakeholder-item {
+    background: var(--panel2); border: 1px solid var(--border);
+    border-radius: 3px; padding: 14px 16px;
+  }
+  .stakeholder-role {
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 4px;
+  }
+  .stakeholder-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px; letter-spacing: 0.05em; color: var(--white); margin-bottom: 6px;
+  }
+  .stakeholder-desc { font-size: 12px; color: var(--text); line-height: 1.5; }
+
+  /* ── DETAILED TIMELINE ── */
+  .timeline {
+    margin-top: 0; padding: 28px 32px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 3px;
+  }
+  .timeline-title {
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 28px;
+  }
+  .tl-track {
+    position: relative; padding-left: 22px;
+    border-left: 2px solid var(--border);
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .tl-item { display: flex; gap: 16px; align-items: flex-start; }
+  .tl-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 5px; margin-left: -27px;
+  }
+  .dot-red   { background: var(--red); }
+  .dot-gold  { background: var(--gold); }
+  .dot-blue  { background: var(--blue); }
+  .dot-muted { background: #2e2a24; border: 1px solid var(--muted); }
+  .tl-period {
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    color: var(--muted); white-space: nowrap; min-width: 90px;
+    padding-top: 3px; letter-spacing: 0.1em;
+  }
+  .tl-content { font-size: 13px; color: var(--text); }
+  .tl-content strong { color: var(--white); display: block; margin-bottom: 3px; font-size: 14px; }
+
+  /* ── PLACEHOLDER ── */
+  .placeholder {
+    border: 1px dashed var(--border); background: transparent;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; min-height: 180px; padding: 28px; gap: 10px;
+    border-radius: 3px;
+  }
+  .placeholder-icon { font-size: 26px; opacity: 0.35; }
+  .placeholder p { font-size: 12.5px; color: var(--muted); max-width: 260px; line-height: 1.6; }
+  .placeholder strong {
+    color: #5a5248; display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 56px 0 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 48px; display: flex;
+    justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    color: var(--muted); letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 680px) {
+    header, main, footer, nav { padding-left: 20px; padding-right: 20px; }
+    h1 { font-size: 52px; }
+    .grid, .pillars-grid, .hl-timeline { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">CRD</span>
+  <a href="#exec">Vision</a>
+  <a href="#governance">Governance</a>
+  <a href="#year1">Year 1</a>
+  <a href="#year2">Year 2</a>
+  <a href="#year3">Year 3</a>
+  <a href="#longrange">Long-Range</a>
+  <a href="#travelrisk">Travel Risk</a>
+  <a href="#juniors">Juniors</a>
+  <a href="#zebra">Team Zebra</a>
+  <a href="#kpis">KPIs</a>
+  <a href="#cadence">Calendar</a>
+  <a href="#stakeholders">Stakeholders</a>
+  <a href="#detailed-timeline">Timeline</a>
+</nav>
+
+<!-- HEADER -->
+<header id="top">
+  <div class="eyebrow">Strategic Plan · 2025 – 2028 and Beyond · Version 3.1</div>
+  <h1>Calgary<br>Roller<br><em>Derby</em></h1>
+  <div class="header-meta">
+    <span>DRAFT — FOR STAKEHOLDER REVIEW</span>
+    <span>LEAGUE YEAR: SEPTEMBER – JUNE</span>
+    <span>STRATEGY SEASON: JULY – AUGUST</span>
+  </div>
+  <div class="north-star">
+    <strong>★ North Star Goal</strong>
+    Rebuild sustainable, thriving house teams — the foundation upon which all travel teams are built — where every skater has a place to grow and compete. A league driven by systems, not personalities, with the data and technology to make smart decisions and scale with confidence.
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     EXECUTIVE SUMMARY & STRATEGIC PILLARS
+════════════════════════════════════════ -->
+<div class="section-header" id="exec">
+  <span class="tag tag-exec">Vision</span>
+  <span class="section-title">Executive Summary & Strategic Pillars</span>
+</div>
+<p class="section-desc">
+  Calgary Roller Derby is entering a deliberate transformation. We are shifting from a maintenance-mode organization reliant on heroic individual effort, to a scalable, data-informed league with sustainable systems, empowered leadership, and the capacity to grow. This plan operates across five strategic pillars that reinforce each other. Systems enable growth. Technology enables accountability. Culture enables retention. All of it together enables a thriving house team program and, ultimately, competitive travel teams.
+</p>
+
+<div class="pillars-grid">
+
+  <div class="pillar-card p-teal">
+    <span class="pillar-num">01</span>
+    <span class="pillar-icon-lg">⚙️</span>
+    <h3>Scalable Systems</h3>
+    <p>Every committee documents its processes, builds annual calendars, and operates with enough redundancy that no single person's departure breaks operations. Process audits precede all growth. Volunteer contribution is measured by outcomes, not hours.</p>
+  </div>
+
+  <div class="pillar-card p-purple">
+    <span class="pillar-num">02</span>
+    <span class="pillar-icon-lg">💡</span>
+    <h3>Technology & Data</h3>
+    <p>Notion becomes our central operating system — for planning, reporting, tracking, and building tools like roster builders and membership databases. A CRM manages space and sponsorship pipelines. Data completeness and dashboard-driven decision-making are core habits, not aspirations.</p>
+  </div>
+
+  <div class="pillar-card p-red">
+    <span class="pillar-num">03</span>
+    <span class="pillar-icon-lg">🏛️</span>
+    <h3>Governance & Leadership</h3>
+    <p>The board shifts from maintenance to strategy mode. Bylaws are current. Committee heads are real leaders with coaching, expectations, and strategic plans — not solo operators burning out. Term lengths increase for continuity. Decisions are logged. Institutional memory is protected.</p>
+  </div>
+
+  <div class="pillar-card p-gold">
+    <span class="pillar-num">04</span>
+    <span class="pillar-icon-lg">📈</span>
+    <h3>Growth & Success</h3>
+    <p>Growth is sequenced deliberately: fix systems first, secure space, then recruit. Target 60 active skaters. KPIs are defined for every function. Sponsorship generates sustainable revenue. Marketing channels are evaluated and prioritized annually.</p>
+  </div>
+
+  <div class="pillar-card p-blue">
+    <span class="pillar-num">05</span>
+    <span class="pillar-icon-lg">❤️</span>
+    <h3>Culture & Retention</h3>
+    <p>A thriving league retains as hard as it recruits. The Culture Committee (formerly DEI) owns skater retention, alumni engagement, the end-of-year awards celebration, and the belonging experience. New skaters are onboarded intentionally and connected to the community in their first year.</p>
+  </div>
+
+  <div class="pillar-card p-muted">
+    <span class="pillar-num">06</span>
+    <span class="pillar-icon-lg">🏟️</span>
+    <h3>Space & Long-Range Vision</h3>
+    <p>Space is the constraint on everything. Year 1 audits and builds the CRM. Year 2 secures additional bookable venues. The long-range vision — a permanent home for derby in Calgary — begins with civic engagement now and matures over 5–10 years.</p>
+  </div>
+
+</div>
+
+<!-- HIGH-LEVEL PHASE TIMELINE -->
+<div class="section-header" style="margin-top:48px;">
+  <span class="tag tag-gov">Roadmap</span>
+  <span class="section-title">Strategic Phases at a Glance</span>
+</div>
+<p class="section-desc" style="margin-bottom:16px;">A high-level view of themes and key milestones. Detailed sequencing follows in each section below.</p>
+
+<div class="hl-timeline">
+
+  <div class="hl-phase ph-red">
+    <div class="hl-phase-label">Foundation</div>
+    <h4>Build the Base</h4>
+    <ul>
+      <li>Bylaws & Google Drive overhaul</li>
+      <li>Board → strategy mode</li>
+      <li>Committee process audits</li>
+      <li>Notion rollout begins</li>
+      <li>Sponsorship function launched</li>
+      <li>Space audit + CRM built</li>
+      <li>Skater lifecycle mapped</li>
+      <li>Marketing channel evaluation</li>
+      <li>Membership survey + database</li>
+    </ul>
+  </div>
+
+  <div class="hl-phase ph-gold">
+    <div class="hl-phase-label">Scale</div>
+    <h4>Expand Capacity</h4>
+    <ul>
+      <li>Additional venues secured</li>
+      <li>City engagement begins</li>
+      <li>Dual-track training (if ready)</li>
+      <li>Retention strategy active</li>
+      <li>Alumni network launched</li>
+      <li>Travel team risk monitored</li>
+      <li>Mid-plan systems review</li>
+    </ul>
+  </div>
+
+  <div class="hl-phase ph-blue">
+    <div class="hl-phase-label">Growth</div>
+    <h4>Triple Down on Recruitment</h4>
+    <ul>
+      <li>Full recruitment drive</li>
+      <li>Target: 60 active skaters</li>
+      <li>Pride games + outreach</li>
+      <li>House teams thriving</li>
+      <li>Alumni network active</li>
+      <li>Sponsorship renewal cycle 2</li>
+      <li>Travel team reassessed</li>
+    </ul>
+  </div>
+
+  <div class="hl-phase ph-muted">
+    <div class="hl-phase-label">Long-Range</div>
+    <h4>Legacy & Permanence</h4>
+    <ul>
+      <li>Permanent space secured</li>
+      <li>Travel teams thriving</li>
+      <li>CRD as Calgary institution</li>
+      <li>Systems outlast individuals</li>
+      <li>Diversified revenue mature</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- MEMBERSHIP TARGETS -->
+<div class="metrics">
+  <div><div class="metric-num">60</div><div class="metric-label">Active Senior Skaters Target</div></div>
+  <div><div class="metric-num">—</div><div class="metric-label">Team Zebra Target (TZ to set)</div></div>
+  <div><div class="metric-num">—</div><div class="metric-label">Junior Skaters Target (JR to set)</div></div>
+</div>
+<p style="font-size:11px; color:var(--muted); margin-top:10px; font-family:'Space Mono',monospace; letter-spacing:0.1em;">
+  Team Zebra and Junior program membership targets to be set by their respective leaders.
+</p>
+
+
+<!-- ══════════════════════════════════════
+     GOVERNANCE & TECHNOLOGY
+════════════════════════════════════════ -->
+<div class="section-header" id="governance">
+  <span class="tag tag-gov">Foundation</span>
+  <span class="section-title">Governance, Board Operations & Technology</span>
+</div>
+<p class="section-desc">Governance and technology are prerequisites — not parallel tracks. These initiatives run concurrently with Year 1 committee work and unlock everything else.</p>
+
+<div class="grid">
+
+  <div class="card card-accent-teal">
+    <span class="card-icon">📜</span>
+    <div class="card-area">Governance</div>
+    <h3>Bylaws & Policy Manual Review</h3>
+    <p>Close the gap between written policy and actual practice. Outdated documents create confusion, inconsistent enforcement, and governance risk.</p>
+    <ul>
+      <li>Audit bylaws and policy manual against current operations</li>
+      <li>Identify and close all gaps — update or formally recognize exceptions</li>
+      <li>Review committee head term lengths — extend for continuity and strategic ownership</li>
+      <li>Flag Culture Committee scope update: owns retention, alumni, end-of-year awards</li>
+      <li>Establish annual or bi-annual review cycle</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-teal">
+    <span class="card-icon">⚙️</span>
+    <div class="card-area">Administration</div>
+    <h3>Admin Automation & Google Drive Overhaul</h3>
+    <p>Two Google Drive accounts require clear ownership rules. No document should be owned by an individual — everything critical lives under league email accounts.</p>
+    <ul>
+      <li>Define what lives on the BOD Drive vs. League Drive — document and communicate</li>
+      <li>Establish rules: who can own, edit, share, and delete in each drive</li>
+      <li>Migrate any incorrectly placed or individually-owned documents</li>
+      <li>Audit all recurring admin tasks — automate or calendar everything possible</li>
+      <li>Reduce key person risk across all admin functions</li>
+    </ul>
+    <div class="card-note">Risk: documents owned by departing members can vanish. Ownership must sit with league email accounts, not individuals.</div>
+  </div>
+
+  <div class="card card-accent-teal">
+    <span class="card-icon">🏛️</span>
+    <div class="card-area">Board Operations</div>
+    <h3>Board: Maintenance Mode → Strategy Mode</h3>
+    <p>The board must shift from keeping things running to driving the organization forward. Every board member owns a piece of this plan.</p>
+    <ul>
+      <li>Assign board-level ownership to each strategic initiative</li>
+      <li>Establish board reporting rhythms aligned to the governance calendar</li>
+      <li>Distribute institutional knowledge — no board member is a single point of failure</li>
+      <li>Conduct stakeholder review of this plan before distribution to committee heads</li>
+      <li>Build succession planning into every board role</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-purple">
+    <span class="card-icon">🗂️</span>
+    <div class="card-area">Technology</div>
+    <h3>Notion: Central Operating System</h3>
+    <p>Notion is where CRD plans, tracks, reports, and builds tools. One paid account (league email) owns and builds all systems. Everyone else joins free as guests. Rollout is one committee at a time — tied to each committee's process audit, not before.</p>
+    <ul>
+      <li>Standard templates: committee planning pages, annual calendars, meeting notes, volunteer deliverable tracking</li>
+      <li>Decision records database: all formal board/committee decisions logged with date, rationale, and owner</li>
+      <li>KPI dashboards: committee heads review their metrics before every meeting — no surprises, no catching up mid-meeting</li>
+      <li>Workload visibility: Notion database shows who is carrying what across committees — enables proactive burnout prevention before it happens</li>
+      <li>Skater pages: individual attendance, volunteer contributions, and training milestone tracking</li>
+    </ul>
+    <div class="card-note">How we run meetings: Review and update Notion pages live. Log all formal decisions in the decisions records database. Everyone reviews their KPI dashboard before attending — meetings are for decisions, not status updates.</div>
+  </div>
+
+  <div class="card card-accent-purple">
+    <span class="card-icon">📊</span>
+    <div class="card-area">Technology — Data & Tools</div>
+    <h3>Membership Database & Notion-Built Tools</h3>
+    <p>Notion's database layer enables tools that used to require expensive software. Data completeness is a KPI — a database is only as useful as the information in it.</p>
+    <ul>
+      <li><strong style="color:var(--white)">Annual Membership Survey:</strong> Notion-based, replaces the existing annual survey. Collects full skater info plus strategic questions: plans to return next season (membership forecasting), skill goals, committee interest, availability changes</li>
+      <li><strong style="color:var(--white)">Roster & Line Builder:</strong> Pulls from the membership database — current availability, skills, team assignments — to assist coaches building lines for games and practices</li>
+      <li><strong style="color:var(--white)">Travel Planner Templates:</strong> Per-tournament pages with hotel room sharing plan, carpool coordination, flight records, and a cost-split calculator for equitable expense sharing</li>
+      <li><strong style="color:var(--white)">Skater Milestone Tracker:</strong> Each skater page shows their progression through the training program — skills passed, levels achieved, next milestones</li>
+      <li><strong style="color:var(--white)">KPI: Data Completeness</strong> — % of skater profiles fully populated. Measured each season. Target: 100%</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-teal">
+    <span class="card-icon">🤝</span>
+    <div class="card-area">Volunteers</div>
+    <h3>Outcome-Based Volunteer Framework</h3>
+    <p>Replace hours-logged with deliverable-based contribution. Every volunteer has a defined output. This reframes volunteering as value creation — and makes recognition meaningful and specific.</p>
+    <ul>
+      <li>Each volunteer role has at least one defined deliverable or KPI</li>
+      <li>Skater pages display volunteer contributions alongside attendance</li>
+      <li>Committee heads report on volunteer outputs in Notion, not just activity counts</li>
+      <li>Workload visibility in Notion helps identify over-loaded volunteers before they burn out</li>
+      <li>Communicate the shift intentionally — frame it as recognition, not surveillance</li>
+      <li>External volunteer management educator brought in Year 1 to support committee heads</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-teal">
+    <span class="card-icon">🏷️</span>
+    <div class="card-area">Membership</div>
+    <h3>Membership Committee: Automate & Expand</h3>
+    <p>Membership currently does admin and basic tracking — with key person risk. Automate the admin, then expand scope to own skater onboarding and, in Year 2–3, alumni engagement.</p>
+    <ul>
+      <li>Audit all membership admin tasks — automate or template everything repeatable</li>
+      <li>Document all processes; ensure at least two people can execute each task</li>
+      <li>Own the annual membership survey and database completeness</li>
+      <li>Define and own the new skater onboarding lifecycle (see Year 1)</li>
+      <li>Year 2–3: alumni network management in coordination with Culture Committee</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     YEAR 1
+════════════════════════════════════════ -->
+<div class="section-header" id="year1">
+  <span class="tag tag-y1">Year One</span>
+  <span class="section-title">Build the Foundation — Systems, Process & Space</span>
+</div>
+
+<div class="grid">
+
+  <div class="card card-accent-red">
+    <span class="card-icon">🏛️</span>
+    <div class="card-area">Leadership</div>
+    <h3>Empower Committee Heads as Leaders</h3>
+    <p>Committee heads must lead — not execute alone. Board sets direction; committee heads deliver within it, with coaching, clear expectations, and real support.</p>
+    <ul>
+      <li>Communicate board-level strategic direction to all committee heads</li>
+      <li>Establish consistent Notion-based reporting templates and cadences</li>
+      <li>External volunteer management educator: training for all committee heads</li>
+      <li>Coach on delegation — volunteers are utilized, not observed</li>
+      <li>Set and track committee-level goals each league year</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">📋</span>
+    <div class="card-area">Process — Audit Order</div>
+    <h3>Committee Process Audits</h3>
+    <p>Every committee maps annual deliverables, processes, and handoffs. Audits are sequenced by urgency. Each audit triggers a Notion rollout for that committee.</p>
+    <ul>
+      <li><strong style="color:var(--white)">1. Training Committee</strong> — highest burnout risk; audit first</li>
+      <li><strong style="color:var(--white)">2. Space/Facilities</strong> — key person risk; critical to growth</li>
+      <li><strong style="color:var(--white)">3. Marketing</strong> — high request volume; needs intake systems</li>
+      <li><strong style="color:var(--white)">4. Merch</strong> — revenue impact; needs annual calendar + team reps</li>
+      <li><strong style="color:var(--white)">5. Events, Membership, Culture</strong> — scope expansion and automation</li>
+    </ul>
+    <div class="card-note">President leads the audit and documentation process — this is a known area of expertise. Committee heads participate and own the output.</div>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">📣</span>
+    <div class="card-area">Marketing</div>
+    <h3>Proactive Marketing Systems</h3>
+    <p>Marketing always delivers — let's remove the scramble. Shift from reactive to planned, with systems that make on-time execution the default.</p>
+    <ul>
+      <li>Build full annual marketing calendar tied to known league events</li>
+      <li>Implement early-request intake process for all committees</li>
+      <li>Standardize Notion templates for recurring content types</li>
+      <li>Grow volunteer capacity within committee</li>
+      <li>Assign social media lead for every event and game — league account and each involved team account — confirmed in advance, not scrambled day-of</li>
+      <li><strong style="color:var(--gold)">★ Advertising Channel Evaluation</strong> — see interactive rubric below</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-red" style="grid-column: 1 / -1;">
+    <span class="card-icon">📢</span>
+    <div class="card-area">Marketing — Game Advertising Channel Evaluation</div>
+    <h3>Advertising Rubric & Priority Tool</h3>
+    <p>Score every channel across five dimensions. Channels with higher composite scores are higher-priority investments of time and money. Filter by attribute to surface quick wins. Embed this tool in Notion for annual re-evaluation.</p>
+
+    <div class="rubric-tool">
+      <div class="rubric-header">
+        <span class="rubric-header-title">Channel Evaluation — Click rows to select channels for your mix. Click column headers to sort.</span>
+        <span class="rubric-note-small">Score: Free/Low → High/Very High · Click header to sort · Selected rows highlighted</span>
+      </div>
+      <div class="rubric-scroll">
+        <table id="rubricTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-col="0" onclick="sortRubric(0)">Channel <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="1" onclick="sortRubric(1)">Cost <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="2" onclick="sortRubric(2)">Effort <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="3" onclick="sortRubric(3)">Reach <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="4" onclick="sortRubric(4)">Repeatable? <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="5" onclick="sortRubric(5)">Reusable Assets? <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="6" onclick="sortRubric(6)">Priority Score <span class="sort-icon">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="rubricBody">
+            <!-- data-scores="cost,effort,reach,repeat,reuse" (1-5, higher=better) -->
+            <tr data-scores="5,3,5,5,5" onclick="toggleRow(this)">
+              <td>Email Newsletter (owned list)</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Very High</td>
+              <td class="label-cell">Fully templated</td>
+              <td class="label-cell">Multi-platform</td>
+              <td class="total-cell t-high">23</td>
+            </tr>
+            <tr data-scores="5,3,4,5,5" onclick="toggleRow(this)">
+              <td>Instagram / Facebook Posts</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Fully templated</td>
+              <td class="label-cell">Multi-platform</td>
+              <td class="total-cell t-high">22</td>
+            </tr>
+            <tr data-scores="5,4,4,5,4" onclick="toggleRow(this)">
+              <td>Facebook Events</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Low</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Fully templated</td>
+              <td class="label-cell">Partial</td>
+              <td class="total-cell t-high">22</td>
+            </tr>
+            <tr data-scores="5,4,3,5,4" onclick="toggleRow(this)">
+              <td>Stories (IG / FB)</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Low</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Fully templated</td>
+              <td class="label-cell">Partial</td>
+              <td class="total-cell t-high">21</td>
+            </tr>
+            <tr data-scores="5,5,3,5,3" onclick="toggleRow(this)">
+              <td>Word of Mouth / Skater Sharing</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Very Low</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Always-on</td>
+              <td class="label-cell">Shareable assets</td>
+              <td class="total-cell t-high">21</td>
+            </tr>
+            <tr data-scores="5,4,3,5,4" onclick="toggleRow(this)">
+              <td>Eventbrite / YYC Event Listings</td>
+              <td class="label-cell">Free–Low</td>
+              <td class="label-cell">Low</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Copy-paste</td>
+              <td class="label-cell">Partial</td>
+              <td class="total-cell t-high">21</td>
+            </tr>
+            <tr data-scores="5,3,4,4,4" onclick="toggleRow(this)">
+              <td>Cross-Promotion (Sport / Community Partners)</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Once set up</td>
+              <td class="label-cell">Shared assets</td>
+              <td class="total-cell t-high">20</td>
+            </tr>
+            <tr data-scores="2,4,5,5,3" onclick="toggleRow(this)">
+              <td>Paid Social (Boosted Posts)</td>
+              <td class="label-cell">Moderate $$</td>
+              <td class="label-cell">Low</td>
+              <td class="label-cell">Very High</td>
+              <td class="label-cell">Scheduled</td>
+              <td class="label-cell">Reuse creative</td>
+              <td class="total-cell t-high">19</td>
+            </tr>
+            <tr data-scores="5,2,5,3,3" onclick="toggleRow(this)">
+              <td>TikTok / Instagram Reels</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Very High</td>
+              <td class="label-cell">Variable</td>
+              <td class="label-cell">Repurposable</td>
+              <td class="total-cell t-high">18</td>
+            </tr>
+            <tr data-scores="3,3,3,4,4" onclick="toggleRow(this)">
+              <td>Posters / Flyers (Physical)</td>
+              <td class="label-cell">Low</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Reprint each time</td>
+              <td class="label-cell">Template reused</td>
+              <td class="total-cell t-med">17</td>
+            </tr>
+            <tr data-scores="5,3,2,4,3" onclick="toggleRow(this)">
+              <td>Community Boards / Libraries / Rec Centres</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">Low</td>
+              <td class="label-cell">Manual each time</td>
+              <td class="label-cell">Same flyer</td>
+              <td class="total-cell t-med">17</td>
+            </tr>
+            <tr data-scores="5,2,4,2,3" onclick="toggleRow(this)">
+              <td>Street Team (on skates, booths, public events)</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Requires coordination</td>
+              <td class="label-cell">Shareable assets</td>
+              <td class="total-cell t-med">16</td>
+            </tr>
+            <tr data-scores="5,1,5,1,2" onclick="toggleRow(this)">
+              <td>Local Media / Press Releases</td>
+              <td class="label-cell">Free</td>
+              <td class="label-cell">Very High</td>
+              <td class="label-cell">Very High</td>
+              <td class="label-cell">Inconsistent</td>
+              <td class="label-cell">Partial</td>
+              <td class="total-cell t-med">14</td>
+            </tr>
+            <tr data-scores="1,3,4,3,1" onclick="toggleRow(this)">
+              <td>Radio Advertising</td>
+              <td class="label-cell">High $$</td>
+              <td class="label-cell">Moderate</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Schedulable</td>
+              <td class="label-cell">Not reusable</td>
+              <td class="total-cell t-low">12</td>
+            </tr>
+            <tr data-scores="1,2,4,2,1" onclick="toggleRow(this)">
+              <td>Bridge / Billboard Signs (city permit req.)</td>
+              <td class="label-cell">High $$</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">High</td>
+              <td class="label-cell">Permit each time</td>
+              <td class="label-cell">Not reusable</td>
+              <td class="total-cell t-low">10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rubric-footer">
+        <span id="selectedCount">No channels selected</span>
+        <button onclick="clearSelection()" style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;background:transparent;border:1px solid var(--border);color:var(--muted);cursor:pointer;border-radius:2px;">Clear Selection</button>
+      </div>
+    </div>
+    <div class="card-note">Click rows to select channels for your annual mix. Sort by any column to surface priorities. Assign the Marketing committee to review and update scores each July.</div>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">🎽</span>
+    <div class="card-area">Merch</div>
+    <h3>Merchandise Planning, Revenue & Team Reps</h3>
+    <p>Lost sales at events signal a planning gap. Merch must be event-ready before demand arrives — and every team must have input into what's needed.</p>
+    <ul>
+      <li>Each team (house teams, travel teams, juniors) has a designated rep on the merch committee — not to design, but to communicate their team's needs and provide stakeholder input on planning</li>
+      <li>Build annual merch calendar tied to key events (FTF, Pride, season opener, etc.)</li>
+      <li>Audit current inventory gaps by team and event</li>
+      <li>Establish production lead times as a standing, calendared item</li>
+      <li>Prioritize highest-revenue SKUs in the planning cycle</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">📍</span>
+    <div class="card-area">Space — Phase 1</div>
+    <h3>Space Audit, CRM & Knowledge Transfer</h3>
+    <p>Space is the constraint on everything. Year 1 de-risks current operations and builds the knowledge base for expansion. Two separate initiatives: bookable space now, permanent home long-term.</p>
+    <ul>
+      <li>Document all current booking processes — minimum two people trained</li>
+      <li>Comprehensive audit of all venues in and around Calgary (documented with contacts, capacity, cost, and follow-up dates)</li>
+      <li>Build CRM (e.g. Clarify, free/low-cost via league email) to track space opportunities, status, and follow-up cadence</li>
+      <li>Scale committee up to support expanded initiatives</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">⛸️</span>
+    <div class="card-area">New Skater Experience</div>
+    <h3>Skater Lifecycle & Onboarding Design</h3>
+    <p>Map the full journey from first contact to active contributing member — for both rookies and experienced transfers. Eager new skaters are currently under-utilized; this is a silent retention and culture risk.</p>
+    <ul>
+      <li>Map end-to-end lifecycle: discovery → tryout → rookie program → active skater → committee involvement</li>
+      <li>Identify gaps between rookie program completion and full league integration</li>
+      <li>Create a lighter, separate onboarding path for transfers</li>
+      <li>Design intentional touchpoints connecting new skaters to committees in their first year</li>
+      <li>Rookie milestone tracker visible on their Notion skater page</li>
+      <li>Owned by Membership; coordinated with Training and Culture Committee</li>
+    </ul>
+    <div class="card-note">Rookies are often the most eager people in the league. Failing to engage them in Year 1 is one of the most common causes of early dropout.</div>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">💼</span>
+    <div class="card-area">Sponsorship</div>
+    <h3>Build the Sponsorship Function</h3>
+    <p>Sponsorship is an untapped revenue stream. Build it as a business development pipeline — systematic, trackable, and sustainable — not a collection of one-off asks.</p>
+    <ul>
+      <li>Define sponsorship tiers and what CRD offers: jersey placement, event naming, social features, game-day presence</li>
+      <li>Add sponsors to the CRM alongside space tracking — separate pipeline, same tool</li>
+      <li>Develop outbound email prospecting strategy (see next card)</li>
+      <li>Priority sponsorship inventory: Pride games, Flat Track Fever, high-visibility events</li>
+      <li>Build sponsorship package: one-pager + tiered pitch deck template in Notion</li>
+      <li>Assign a sponsorship lead with a clear annual target</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">📧</span>
+    <div class="card-area">Sponsorship — Outbound</div>
+    <h3>Sponsorship Outbound Email Playbook</h3>
+    <p>Systematic outreach beats one-off asks. A repeatable, trackable prospecting process that runs every pre-season — built once, reused annually with minor updates.</p>
+    <ul>
+      <li><strong style="color:var(--white)">Prospect list:</strong> Local businesses aligned with CRD's audience — fitness, apparel, bars/restaurants, LGBTQ+ businesses, women-owned businesses, health &amp; wellness</li>
+      <li><strong style="color:var(--white)">Sequence:</strong> (1) Introduction + one-pager, (2) Follow-up at 10 days, (3) Final check-in at 21 days → archive and re-engage next season</li>
+      <li><strong style="color:var(--white)">Personalization:</strong> Reference their specific business — why CRD's audience is their audience</li>
+      <li><strong style="color:var(--white)">CTA:</strong> Request a 20-minute call, not an immediate commitment</li>
+      <li><strong style="color:var(--white)">Timing:</strong> Launch July–August so sponsors are confirmed before the September league kickoff</li>
+      <li><strong style="color:var(--white)">Track in CRM:</strong> Outreach date, response, stage, tier, renewal date</li>
+      <li><strong style="color:var(--white)">Templates:</strong> Live in Notion — editable per prospect, consistent structure</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-red">
+    <span class="card-icon">🎉</span>
+    <div class="card-area">Culture Committee</div>
+    <h3>End-of-Year Awards & Recognition — June</h3>
+    <p>Recognition drives retention. The annual awards celebration is a fixed, June-scheduled event — it marks the actual end of our league year. Culture Committee owns it; Events Committee assists with execution.</p>
+    <ul>
+      <li>Reinstated as a June event aligned to the end of the league year</li>
+      <li>Awards recognize both athletic achievement and volunteer contributions</li>
+      <li>Culture Committee owns design and execution; Events Committee supports logistics</li>
+      <li>Built into both committees' annual calendars — not optional, not last-minute</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     YEAR 2
+════════════════════════════════════════ -->
+<div class="section-header" id="year2">
+  <span class="tag tag-y2">Year Two</span>
+  <span class="section-title">Scale — Space, Civic Engagement, Training & Culture</span>
+</div>
+
+<div class="grid">
+
+  <div class="card card-accent-gold">
+    <span class="card-icon">🏟️</span>
+    <div class="card-area">Space — Phase 2</div>
+    <h3>Secure Additional Bookable Venues</h3>
+    <p>Armed with the Year 1 audit and CRM, move from discovery to commitment. More space enables more practices and more house team games.</p>
+    <ul>
+      <li>Pursue and finalize bookings at highest-priority venues from the audit</li>
+      <li>Establish ongoing venue relationships — not just one-time bookings</li>
+      <li>Target enough space to run dual practice streams plus increased game schedule</li>
+      <li>Continue CRM monitoring with regular follow-up cadence on all tracked venues</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-gold">
+    <span class="card-icon">🏙️</span>
+    <div class="card-area">Civic Engagement — Phase 1</div>
+    <h3>Engage the City for Long-Term Space</h3>
+    <p>New recreation centres are being built in Calgary. CRD needs to be in those conversations now. This is a long-game strategy that starts in Year 2.</p>
+    <ul>
+      <li>Identify and join relevant City of Calgary committees (recreation, parks, community development)</li>
+      <li>Build relationships with city planners and recreation centre developers</li>
+      <li>Communicate CRD's space needs proactively to decision-makers</li>
+      <li>Explore partnership with a university MBA, urban planning, or recreation management program to assist with grant writing and city engagement — this is labour-intensive and not our core competency; a capstone project or community partnership could do the heavy lifting at low or no cost</li>
+      <li>Submit initial grant applications where eligible</li>
+    </ul>
+    <div class="card-note">Academic partnership idea: MBA programs, urban planning, and recreation management departments regularly seek community engagement projects. CRD's long-range space strategy could be an ideal capstone project — they handle research, grant writing, and stakeholder mapping; we provide direction and review.</div>
+  </div>
+
+  <div class="card card-accent-gold">
+    <span class="card-icon">❤️</span>
+    <div class="card-area">Culture Committee</div>
+    <h3>Skater Retention Strategy</h3>
+    <p>Recruitment without retention is a leaking bucket. Culture Committee takes ownership of retention as a core mandate — validated in the governance review.</p>
+    <ul>
+      <li>Define and own retention KPIs (see KPIs section)</li>
+      <li>Annual membership survey includes strategic retention questions</li>
+      <li>Identify why skaters leave — exit survey or structured outreach</li>
+      <li>Design programs to support multi-season engagement, especially at the 2–3 year mark</li>
+      <li>Coordinate with Training on skill development pathway as a retention tool</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-gold">
+    <span class="card-icon">🎓</span>
+    <div class="card-area">Culture + Membership — Year 2</div>
+    <h3>Alumni Network: Foundation</h3>
+    <p>Former skaters are ambassadors, officials, coaches, and donors. Begin building a light-touch alumni network with meaningful engagement and a real incentive to stay connected.</p>
+    <ul>
+      <li>Culture Committee and Membership co-own alumni engagement</li>
+      <li>Build alumni contact list from existing records</li>
+      <li>Communicate with alumni at least twice per year (end-of-season, major events)</li>
+      <li>Invite alumni to June end-of-year event — reconnect them to the community</li>
+      <li>Clear pathway for alumni to re-engage as officials, volunteers, or coaches</li>
+      <li><strong style="color:var(--gold)">★ Alumni Incentive:</strong> Alumni who join the program and share our game events on social media are entered to win free game tickets — easy engagement, real reach, costs almost nothing</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-gold">
+    <span class="card-icon">📊</span>
+    <div class="card-area">Organizational Health</div>
+    <h3>Mid-Plan Systems Review</h3>
+    <p>With Year 1 systems in place, assess what's working before the Year 3 recruitment push.</p>
+    <ul>
+      <li>Review committee process documentation — update anything that has drifted</li>
+      <li>Review KPIs across all functions — what are we hitting, what needs adjustment?</li>
+      <li>Assess volunteer satisfaction and utilization rates via Notion workload data</li>
+      <li>Confirm Notion rollout is complete and being used consistently</li>
+      <li>Ensure all committees have succession plans ahead of any board turnover</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-gold">
+    <span class="card-icon">⛸️</span>
+    <div class="card-area">Training — If Ready</div>
+    <h3>Dual-Track Training Program</h3>
+    <p>Only launched after the training committee process audit is complete, the committee is sustainably staffed, and additional space is confirmed. Do not add load to a team that isn't ready.</p>
+    <ul>
+      <li>Second practice stream: off-skates conditioning + fundamental derby skills (not a rookie program — for developing skaters who need continued growth)</li>
+      <li>Primary practices focus on team strategy, formations, and full-speed play</li>
+      <li>Training committee leads coordinate; volunteers execute</li>
+      <li>Document long-term skater development pathway</li>
+      <li>Track progression through skill milestones on skater Notion pages</li>
+    </ul>
+    <div class="card-note">Gate: launches only when space AND committee sustainability are both confirmed. May shift to Year 3 if either condition isn't met.</div>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     YEAR 3
+════════════════════════════════════════ -->
+<div class="section-header" id="year3">
+  <span class="tag tag-y3">Year Three</span>
+  <span class="section-title">Recruit & Thrive — Growing to 75 Members</span>
+</div>
+<p class="section-desc">Recruitment at scale only works when the league can absorb, develop, and retain new members. Year 3 is when infrastructure is ready and we triple down.</p>
+
+<div class="grid">
+
+  <div class="card card-accent-blue">
+    <span class="card-icon">📢</span>
+    <div class="card-area">Recruitment — Skaters</div>
+    <h3>Full-Scale Skater Recruitment Drive</h3>
+    <ul>
+      <li>Target: 75 total senior members (60 active + 15 buffer)</li>
+      <li>Recruit across complementary sports: hockey, rugby, figure skating, lacrosse, dance — athletes with transferable skills</li>
+      <li>Recruit at both high school and adult levels</li>
+      <li>Offer team-bonding game experiences — sports teams attend a game at a group discount rate</li>
+      <li>Host and promote Pride games as a community recruitment moment</li>
+      <li>Activate all strategic partnerships built in Years 1–2</li>
+      <li>Leverage alumni network as ambassadors and word-of-mouth recruiters</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-blue">
+    <span class="card-icon">🏠</span>
+    <div class="card-area">House Teams</div>
+    <h3>House Teams: Rebuilt & Thriving</h3>
+    <p>With sufficient skaters, space, and systems — house teams host regular games and serve as both a competitive destination and travel team feeder.</p>
+    <ul>
+      <li>Regular, well-scheduled house team games — reliable and well-attended</li>
+      <li>Measure: game frequency, attendance, skater satisfaction</li>
+      <li>Reassess team structure and composition against actual active member count</li>
+      <li>Document what recruitment channels worked for future planning cycles</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-blue">
+    <span class="card-icon">🌐</span>
+    <div class="card-area">Brand & Community</div>
+    <h3>Raise CRD's Public Profile</h3>
+    <ul>
+      <li>Expand marketing presence across social and community channels in support of recruitment</li>
+      <li>Leverage Pride games and community events for brand exposure</li>
+      <li>Activate sponsorship partnerships for co-promotion</li>
+      <li>Consistent league identity across all touchpoints</li>
+      <li>Membership survey data used to refine messaging — we know who our skaters are and where they came from</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-blue">
+    <span class="card-icon">🎓</span>
+    <div class="card-area">Culture + Membership — Year 3</div>
+    <h3>Alumni Network: Active & Contributing</h3>
+    <ul>
+      <li>Alumni actively engaged as officials, volunteers, coaches, and event supporters</li>
+      <li>Alumni recognized publicly at June end-of-year celebration</li>
+      <li>Alumni social sharing incentive program running and driving game attendance</li>
+      <li>Assess whether a formal alumni membership tier makes sense</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TRAVEL TEAM RISK
+════════════════════════════════════════ -->
+<div class="section-header" id="travelrisk">
+  <span class="tag tag-risk">Risk Flag</span>
+  <span class="section-title">Travel Team Transition Risk & Contingency</span>
+</div>
+
+<div class="grid">
+
+  <div class="card card-accent-risk">
+    <span class="card-icon">⚠️</span>
+    <div class="card-area">Risk — Travel Teams</div>
+    <h3>Charter A Retirement Risk & Cascade Effect</h3>
+    <p>Both travel teams are having successful seasons — but a wave of retirements from Charter A could trigger a cascade that destabilizes both teams simultaneously.</p>
+    <ul>
+      <li><strong style="color:#e07050">The Risk:</strong> Charter A loses significant skaters to retirement → Charter B skaters are called up to fill Charter A → Charter B is decimated with no back-feed from house teams to replace them</li>
+      <li><strong style="color:#e07050">Current Status:</strong> Timeline is unclear — this could become critical within months or over 1–2 seasons</li>
+      <li>House team rebuild (this entire plan) is the long-term solution — but won't be complete before the transition hits</li>
+      <li>Monitor retirement intentions actively — informal check-ins with Charter A skaters on future availability</li>
+      <li>Consider whether a merged or restructured travel program makes sense in a transitional period</li>
+      <li>Explore whether retiring skaters can transition to officiating, coaching, or mentoring roles to maintain continuity</li>
+    </ul>
+    <div class="card-note risk-note">Contingency: if significant retirements are confirmed before Year 3, move travel team restructuring into Year 2 planning. The goal is a single, healthy, sustainable travel program — not two underpopulated teams.</div>
+  </div>
+
+  <div class="card card-accent-muted">
+    <span class="card-icon">✈️</span>
+    <div class="card-area">Long-Range Vision</div>
+    <h3>Thriving Travel Teams — Long-Range Goal</h3>
+    <p>The long-range vision is thriving, sustainable travel teams built on a healthy house team pipeline. That foundation is what this entire plan is designed to create.</p>
+    <ul>
+      <li>Travel teams self-fund through their own fundraising efforts</li>
+      <li>Clear development pathway: house team → travel team tryout</li>
+      <li>Travel team composition reflects a healthy pipeline, not desperation selection</li>
+      <li>Structure (one team vs. two) determined by actual membership numbers — not legacy expectation</li>
+    </ul>
+    <div class="card-note">The exact shape of the travel program in Year 3–5 depends heavily on how the retirement transition unfolds. This section should be revisited at the end of Year 1 with current retirement data.</div>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     LONG-RANGE
+════════════════════════════════════════ -->
+<div class="section-header" id="longrange">
+  <span class="tag tag-long">Long-Range</span>
+  <span class="section-title">5–10 Year Vision — A Permanent Home for Derby</span>
+</div>
+
+<div class="grid">
+
+  <div class="card card-accent-muted">
+    <span class="card-icon">🏛️</span>
+    <div class="card-area">Facilities</div>
+    <h3>Permanent Dedicated Venue</h3>
+    <p>The ultimate goal: a space CRD owns, leases permanently, or has designed into a city recreation centre. Civic engagement begun in Year 2 is the foundation. Groundwork starts now.</p>
+    <ul>
+      <li>Secure dedicated permanent space (owned, long-term lease, or embedded in new rec centre)</li>
+      <li>Continue active city planning participation and advocacy</li>
+      <li>Pursue grants, sponsorships, and partnerships to fund acquisition or build-out</li>
+      <li>Academic partnership (MBA/urban planning/rec management) continues through this phase</li>
+      <li>Influence new recreation centre development to include derby-appropriate facilities</li>
+    </ul>
+  </div>
+
+  <div class="card card-accent-muted">
+    <span class="card-icon">📈</span>
+    <div class="card-area">Organizational Maturity</div>
+    <h3>Institutional Memory & Sustained Growth</h3>
+    <p>By Year 5, CRD's systems outlast any individual. The league runs on process, not personality.</p>
+    <ul>
+      <li>All committees fully documented and succession-planned</li>
+      <li>Regular strategic planning cycles embedded in governance (every 3 years)</li>
+      <li>Ongoing volunteer pipeline: recruit, train, recognize</li>
+      <li>Diversified revenue: merch, events, grants, sponsorship</li>
+      <li>Notion system maintained and evolving — never abandoned for the next shiny tool</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     JUNIORS
+════════════════════════════════════════ -->
+<div class="section-header" id="juniors">
+  <span class="tag tag-y1">Juniors League</span>
+  <span class="section-title">Junior Program — Leader-Owned Plan</span>
+</div>
+<p class="section-desc">Calgary Roller Derby already has a Junior program. This section is a placeholder for Junior leaders to build their own strategic plan — using this document as a framework. Ownership sits with Junior leadership, not the board.</p>
+
+<div class="grid">
+  <div class="card placeholder"><div class="placeholder-icon">⛸️</div><strong>For Junior Leaders</strong><p>Skater development pathway, skill milestones, and competition goals for the Junior program.</p></div>
+  <div class="card placeholder"><div class="placeholder-icon">📋</div><strong>For Junior Leaders</strong><p>Process documentation, annual calendar, committee structure, and key person risk mitigation.</p></div>
+  <div class="card placeholder"><div class="placeholder-icon">📢</div><strong>For Junior Leaders</strong><p>Junior-specific recruitment, retention, and community engagement — school outreach, youth sport partnerships.</p></div>
+  <div class="card placeholder"><div class="placeholder-icon">💡</div><strong>For Junior Leaders</strong><p>Long-range vision — how does the program grow, and how does it feed into the senior league pipeline?</p></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TEAM ZEBRA
+════════════════════════════════════════ -->
+<div class="section-header" id="zebra">
+  <span class="tag tag-y1">Team Zebra</span>
+  <span class="section-title">Refs & NSOs — Leader-Owned Plan</span>
+</div>
+<p class="section-desc">Team Zebra leadership owns the plan for ref and NSO skill development, recruitment, and retention. This is a placeholder — use the same strategic frameworks as the broader league plan. Growing and sustaining officiating is essential to everything else.</p>
+
+<div class="grid">
+  <div class="card placeholder"><div class="placeholder-icon">🦓</div><strong>For Team Zebra</strong><p>Ref and NSO skill development pathway — from new volunteer to experienced official.</p></div>
+  <div class="card placeholder"><div class="placeholder-icon">📢</div><strong>For Team Zebra</strong><p>Recruitment strategy — injured/retiring skater pipeline, dedicated non-skater recruitment, onboarding process.</p></div>
+  <div class="card placeholder"><div class="placeholder-icon">❤️</div><strong>For Team Zebra</strong><p>Retention plan — what keeps officials engaged, recognized, and returning season after season?</p></div>
+  <div class="card placeholder"><div class="placeholder-icon">🎯</div><strong>For Team Zebra</strong><p>KPIs — active official count, crew fill rate, new officials per season. Set your own targets.</p></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     KPIs
+════════════════════════════════════════ -->
+<div class="section-header" id="kpis">
+  <span class="tag tag-kpi">KPIs</span>
+  <span class="section-title">Key Performance Indicators — Simple, Measurable, Owned</span>
+</div>
+<p class="section-desc">Every major function has at least one clear KPI. All metrics live in Notion dashboards. Committee heads review their metrics before every meeting. If a metric can't be calculated quickly, simplify it.</p>
+
+<div class="kpi-grid">
+
+  <div class="kpi-item">
+    <div class="kpi-function">Membership & Database</div>
+    <ul>
+      <li>Total active senior skaters (vs. 60 target)</li>
+      <li>Total senior members (vs. 75 target)</li>
+      <li>New member retention at 6 months</li>
+      <li>Rookie-to-active conversion rate</li>
+      <li>⭐ Data completeness: % of skater profiles fully populated</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Training</div>
+    <ul>
+      <li>Average practice attendance rate</li>
+      <li>Skaters advancing through skill milestones per season</li>
+      <li>% of skaters in dual-track program (once launched)</li>
+      <li>Training volunteer utilization rate</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Space & Facilities</div>
+    <ul>
+      <li>Confirmed bookable venues (count)</li>
+      <li>Practice hours available per week</li>
+      <li>CRM entries with active follow-up (count)</li>
+      <li>City committee touchpoints per year</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Marketing</div>
+    <ul>
+      <li>% of game promotions delivered on schedule</li>
+      <li>Social reach per game (avg)</li>
+      <li>Marketing requests received 2+ weeks in advance</li>
+      <li>Social media lead assigned for every game/event (Y/N)</li>
+      <li>Channel evaluation completed annually (Y/N)</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Merch</div>
+    <ul>
+      <li>Merch revenue per season</li>
+      <li>Stock-out incidents at events (target: 0)</li>
+      <li>Lead time compliance: orders placed on schedule</li>
+      <li>Team reps active on committee (all teams Y/N)</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Events</div>
+    <ul>
+      <li>House team games hosted per season</li>
+      <li>Average game attendance</li>
+      <li>End-of-year celebration held in June (Y/N)</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Sponsorship</div>
+    <ul>
+      <li>Active sponsors (count + tier breakdown)</li>
+      <li>Sponsorship revenue per season</li>
+      <li>Outbound prospects contacted per cycle</li>
+      <li>Sponsor renewal rate</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Culture & Retention</div>
+    <ul>
+      <li>Season-over-season skater retention rate</li>
+      <li>2-year retention rate (key drop-off point)</li>
+      <li>Alumni program members (count)</li>
+      <li>Alumni event shares / ticket redemptions</li>
+      <li>Annual belonging score (survey)</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Volunteers (All Committees)</div>
+    <ul>
+      <li>Volunteer roles with defined deliverables (% of total)</li>
+      <li>Deliverables completed on time per committee</li>
+      <li>Open critical volunteer roles (target: 0)</li>
+      <li>Overloaded volunteers flagged via Notion workload view</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Governance & Board</div>
+    <ul>
+      <li>Committees with completed process docs (%)</li>
+      <li>Bylaws review completed (Y/N)</li>
+      <li>Committees with succession plans (%)</li>
+      <li>Google Drive audit completed (Y/N)</li>
+      <li>Formal decisions logged in Notion database (%)</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Technology & Data</div>
+    <ul>
+      <li>Notion rollout complete across all committees (Y/N)</li>
+      <li>Membership database completeness (%)</li>
+      <li>Annual survey completion rate</li>
+      <li>Skater pages active and current (%)</li>
+    </ul>
+  </div>
+
+  <div class="kpi-item">
+    <div class="kpi-function">Juniors & Team Zebra</div>
+    <ul>
+      <li>Active junior skaters — target set by Junior leaders</li>
+      <li>Active refs/NSOs — target set by Team Zebra</li>
+      <li>Games with full official crew (%)</li>
+      <li>Junior-to-senior pipeline (count per season)</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     GOVERNANCE CALENDAR
+════════════════════════════════════════ -->
+<div class="section-header" id="cadence">
+  <span class="tag tag-gov">Calendar</span>
+  <span class="section-title">Annual Governance & Strategy Cadence</span>
+</div>
+<p class="section-desc">The league year runs September through June. Strategy and governance work happens July–August. This calendar represents the long-term vision of a fully operational league — some items are a few years away, some will shift as we learn. Everything below should eventually live in a shared, auto-recurring calendar.</p>
+
+<div class="cadence">
+
+  <div class="cadence-month highlight">
+    <div class="month-name">July</div>
+    <ul>
+      <li>Strategy season begins</li>
+      <li>Board strategic planning session</li>
+      <li>Sponsorship outreach campaign launches</li>
+      <li>Committee heads submit annual plans</li>
+      <li>Pre-budget submissions due</li>
+      <li>Space CRM review + follow-up sweep</li>
+      <li>Channel evaluation reviewed (Marketing)</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month highlight">
+    <div class="month-name">August</div>
+    <ul>
+      <li>Budget finalized and approved</li>
+      <li>Annual calendars locked for all committees</li>
+      <li>Sponsorship deals confirmed</li>
+      <li>Notion templates updated for new year</li>
+      <li>Bylaw/policy review (if scheduled)</li>
+      <li>New committee heads onboarded</li>
+      <li>Membership survey designed for new year</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month">
+    <div class="month-name">September</div>
+    <ul>
+      <li>League year kicks off</li>
+      <li>Travel team tryouts</li>
+      <li>Rookie program begins</li>
+      <li>Annual membership survey distributed</li>
+      <li>All committees operational</li>
+      <li>Merch: confirm stock for fall events</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month">
+    <div class="month-name">Oct – Nov</div>
+    <ul>
+      <li>First committee reporting cycle</li>
+      <li>KPI check-in: Q1 metrics (reviewed in Notion)</li>
+      <li>House team games in full swing</li>
+      <li>Marketing: winter event push</li>
+      <li>Membership survey closes + data reviewed</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month">
+    <div class="month-name">December</div>
+    <ul>
+      <li>Mid-year committee reporting</li>
+      <li>Merch: holiday inventory</li>
+      <li>Alumni: mid-year outreach</li>
+      <li>Travel retirement risk check-in</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month">
+    <div class="month-name">Jan – Mar</div>
+    <ul>
+      <li>KPI check-in: mid-year review</li>
+      <li>Recruitment: winter push</li>
+      <li>Space: follow up on pending venues</li>
+      <li>Sponsorship: mid-year sponsor check-in</li>
+      <li>Academic partnership outreach (if in scope)</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month">
+    <div class="month-name">April – May</div>
+    <ul>
+      <li>Flat Track Fever and spring events</li>
+      <li>Merch: event stock confirmed</li>
+      <li>Pride game planning finalizes</li>
+      <li>Committee heads begin year-end reports</li>
+      <li>Sponsorship renewals discussed with sponsors</li>
+    </ul>
+  </div>
+
+  <div class="cadence-month">
+    <div class="month-name">June</div>
+    <ul>
+      <li>★ End-of-Year Awards Celebration</li>
+      <li>League year ends</li>
+      <li>Full KPI review: annual metrics</li>
+      <li>Committee year-end reports submitted</li>
+      <li>Board end-of-year debrief</li>
+      <li>Handoffs documented for incoming leads</li>
+      <li>Alumni event outreach</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     STAKEHOLDER MAP
+════════════════════════════════════════ -->
+<div class="section-header" id="stakeholders">
+  <span class="tag tag-gov">Process</span>
+  <span class="section-title">Stakeholder Engagement Map</span>
+</div>
+<p class="section-desc">Before this plan becomes official policy, consult the right people in the right order. Who gets input, who gets a preview, and who gets informed — matters. Sequence: Board → Key Leaders → Committee Heads / Juniors / Zebra → General League.</p>
+
+<div class="stakeholder-grid">
+
+  <div class="stakeholder-item">
+    <div class="stakeholder-role">Stage 1 — Co-Create</div>
+    <div class="stakeholder-name">Board of Directors</div>
+    <div class="stakeholder-desc">Review, challenge, and commit to the plan. Must own it before anyone else sees it. This is the group that needs to shift from maintenance to strategy mode.</div>
+  </div>
+
+  <div class="stakeholder-item">
+    <div class="stakeholder-role">Stage 2 — Input</div>
+    <div class="stakeholder-name">Key Senior Leaders</div>
+    <div class="stakeholder-desc">Experienced committee heads and trusted voices whose buy-in is critical. Consult before committee-wide distribution. Their perspective improves the plan and their support accelerates adoption.</div>
+  </div>
+
+  <div class="stakeholder-item">
+    <div class="stakeholder-role">Stage 3 — Engaged</div>
+    <div class="stakeholder-name">All Committee Heads</div>
+    <div class="stakeholder-desc">Receive the finalized plan. Asked to build their own committee-level plans in response. Given clear context on board expectations and what support they will receive.</div>
+  </div>
+
+  <div class="stakeholder-item">
+    <div class="stakeholder-role">Stage 3 — Parallel</div>
+    <div class="stakeholder-name">Junior Leaders & Team Zebra</div>
+    <div class="stakeholder-desc">Receive the plan alongside committee heads. Asked to use it as a framework for their own sub-plans. Ownership sits entirely with them.</div>
+  </div>
+
+  <div class="stakeholder-item">
+    <div class="stakeholder-role">Stage 4 — Informed</div>
+    <div class="stakeholder-name">General League Membership</div>
+    <div class="stakeholder-desc">Receive a summary of the vision and Year 1 priorities. Transparency builds trust and engagement. Operational detail stays internal.</div>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     DETAILED TIMELINE
+════════════════════════════════════════ -->
+<div class="section-header" id="detailed-timeline">
+  <span class="tag tag-gov">Timeline</span>
+  <span class="section-title">Detailed Strategic Timeline</span>
+</div>
+
+<div class="timeline">
+  <div class="timeline-title">Full Initiative Timeline — Detailed View</div>
+  <div class="tl-track">
+
+    <div class="tl-item">
+      <div class="tl-dot dot-red"></div>
+      <div class="tl-period">NOW — Y1</div>
+      <div class="tl-content">
+        <strong>Foundation: Governance, Systems, Technology & Space</strong>
+        Bylaws review · Google Drive overhaul · Board → strategy mode · Committee process audits (Training first) · Notion rollout committee by committee · Membership database + annual survey · Marketing calendar + channel evaluation + social lead assignment · Merch calendar + team reps · Sponsorship function + CRM + outbound playbook · Space audit + CRM · Skater lifecycle design · End-of-year June celebration reinstated · Volunteer management training · Outcome-based volunteer tracking · Notion tools: roster builder, travel planner, milestone tracker
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot dot-gold"></div>
+      <div class="tl-period">Y2</div>
+      <div class="tl-content">
+        <strong>Scale: Space, Civic Engagement, Culture & Training</strong>
+        Additional venues secured · City committee engagement begins · Academic partnership explored for grant writing + civic engagement · Skater retention strategy active (Culture Committee) · Alumni network launched with social sharing incentive · Travel team transition risk actively monitored + contingency ready · Mid-plan systems review · Dual-track training launched (if space + committee health confirmed) · Sponsorship renewal cycle 1
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot dot-blue"></div>
+      <div class="tl-period">Y3</div>
+      <div class="tl-content">
+        <strong>Recruit: Triple Down on Growth</strong>
+        Full recruitment drive (target 75 senior members) · Pride games · Cross-sport and cross-community outreach · Team bonding game packages · House teams thriving and hosting regular games · Alumni network active and driving game attendance · Sponsorship in second renewal cycle · Travel team structure reassessed based on membership data and retirement outcomes
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot dot-muted"></div>
+      <div class="tl-period">Y4 – Y5</div>
+      <div class="tl-content">
+        <strong>Sustain & Compete</strong>
+        Travel teams stable and thriving (structure TBD based on Y2–3 data) · Deeper civic partnerships for permanent space · Academic partnership potentially delivering grant applications · League runs on documented systems, not individual heroics
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot dot-muted"></div>
+      <div class="tl-period">Y5 – Y10</div>
+      <div class="tl-content">
+        <strong>Legacy: A Permanent Home for Derby in Calgary</strong>
+        Dedicated permanent space secured or under active development · CRD recognized as an institution in Calgary's sports community · Self-sustaining systems, diverse revenue streams, thriving house and travel teams, strong junior pipeline
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <span>CALGARY ROLLER DERBY — STRATEGIC PLAN 2025–2028+</span>
+  <span>VERSION 3.1 · DRAFT FOR STAKEHOLDER REVIEW</span>
+  <span>LEAGUE YEAR: SEP–JUN · STRATEGY SEASON: JUL–AUG</span>
+</footer>
+
+<script>
+// ── RUBRIC: Row selection ──
+function toggleRow(row) {
+  row.classList.toggle('row-selected');
+  updateSelectedCount();
+}
+function clearSelection() {
+  document.querySelectorAll('#rubricBody tr.row-selected').forEach(r => r.classList.remove('row-selected'));
+  updateSelectedCount();
+}
+function updateSelectedCount() {
+  const n = document.querySelectorAll('#rubricBody tr.row-selected').length;
+  const el = document.getElementById('selectedCount');
+  if (!el) return;
+  el.textContent = n === 0 ? 'No channels selected' : `${n} channel${n > 1 ? 's' : ''} selected for your mix`;
+}
+
+// ── RUBRIC: Sortable columns ──
+let sortCol = 6; // default: priority score
+let sortAsc = false; // default: descending
+
+function sortRubric(colIndex) {
+  const tbody = document.getElementById('rubricBody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+
+  if (sortCol === colIndex) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = colIndex;
+    sortAsc = colIndex === 0; // text col sorts asc by default, numeric cols desc
+  }
+
+  // Update header indicators
+  document.querySelectorAll('#rubricTable thead th').forEach((th, i) => {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (i === colIndex) th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+  });
+
+  rows.sort((a, b) => {
+    let aVal, bVal;
+    if (colIndex === 0) {
+      // Channel name — text sort
+      aVal = a.cells[0].textContent.trim().toLowerCase();
+      bVal = b.cells[0].textContent.trim().toLowerCase();
+      return sortAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+    } else if (colIndex === 6) {
+      // Priority score — read from data-scores sum
+      const aScores = a.dataset.scores.split(',').map(Number);
+      const bScores = b.dataset.scores.split(',').map(Number);
+      aVal = aScores.reduce((s, v) => s + v, 0);
+      bVal = bScores.reduce((s, v) => s + v, 0);
+    } else {
+      // Dimension columns (1–5) map to scores index 0–4
+      const idx = colIndex - 1;
+      aVal = parseInt(a.dataset.scores.split(',')[idx]);
+      bVal = parseInt(b.dataset.scores.split(',')[idx]);
+    }
+    return sortAsc ? aVal - bVal : bVal - aVal;
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+}
+
+// Init: sort by score desc on load
+document.addEventListener('DOMContentLoaded', () => {
+  sortRubric(6);
+});
+</script>
+
+</body>
+</html>
